@@ -7,7 +7,7 @@ use Alura\Cursos\Infra\EntityManagerCreator;
 
 require __DIR__ . '/../../vendor/autoload.php';
 
-class ListarCursos implements InterfaceRequest
+class ListarCursos extends ControllerHtml implements InterfaceRequest
 {
     private $repositorioDeCursos;
 
@@ -18,8 +18,9 @@ class ListarCursos implements InterfaceRequest
     }
     public function processaRequisicao(): void
     {
-        $titulo = "Lista de cursos";
-        $cursos = $this->repositorioDeCursos->findAll();
-        require __DIR__ . "/../../view/cursos/list.php";
+        echo $this->renderizarHtml('cursos/list.php', [
+            "titulo" => "Lista de cursos",
+            "cursos" => $this->repositorioDeCursos->findAll()
+        ]);
     }
 }

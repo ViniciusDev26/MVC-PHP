@@ -31,6 +31,7 @@ class ComposerStaticInit0f2bae2f84e13d5b60bf19413b1dab86
         'A' => 
         array (
             'Alura\\Cursos\\' => 13,
+            'Alura\\Armazenamento\\' => 20,
         ),
     );
 
@@ -77,12 +78,16 @@ class ComposerStaticInit0f2bae2f84e13d5b60bf19413b1dab86
         ),
         'Doctrine\\Common\\' => 
         array (
-            0 => __DIR__ . '/..' . '/doctrine/event-manager/lib/Doctrine/Common',
-            1 => __DIR__ . '/..' . '/doctrine/reflection/lib/Doctrine/Common',
+            0 => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common',
+            1 => __DIR__ . '/..' . '/doctrine/event-manager/lib/Doctrine/Common',
             2 => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common',
-            3 => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common',
+            3 => __DIR__ . '/..' . '/doctrine/reflection/lib/Doctrine/Common',
         ),
         'Alura\\Cursos\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
+        ),
+        'Alura\\Armazenamento\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),

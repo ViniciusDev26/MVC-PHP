@@ -17,11 +17,24 @@ class FormularioSalvar implements InterfaceRequest
 
     public function processaRequisicao():void
     {
-        $descricao = filter_input(INPUT_POST, 'descricao', FILTER_SANITAZE_STRING);
+        $id = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT);
+        $descricao = filter_input(INPUT_POST, 'descricao', FILTER_SANITIZE_STRING);
+
         $curso = new Curso();
-        $curso->setDescricao($_POST["descricao"]);
-        $this->entityManager->persist($curso);
+        $curso->setDescricao($descricao);
+
+
+        if(!is_null($id) && $id !== false){
+            $curso->setId($id);
+            $this->entityManager->merge($curso);
+        }else{
+            $this->entityManager->persist($curso);
+        }
         $this->entityManager->flush();
+
+            
         header('Location:/listar-cursos', false, 302);
+        
+        
     }
 }

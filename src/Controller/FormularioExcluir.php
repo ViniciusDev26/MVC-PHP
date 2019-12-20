@@ -22,8 +22,7 @@ class FormularioExcluir implements InterfaceRequest
             return;
         }
 
-        $cursosRepository = $this->entityManager->getRepository(Curso::class);
-        $curso = $cursosRepository->find($id);
+        $curso = $this->entityManager->getReference(Curso::class,$id);
 
         $this->entityManager->remove($curso);
         $this->entityManager->flush();
